@@ -12,7 +12,7 @@
 // @resource     css-reset https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
-// @updateURL
+// @updateURL    https://github.com/simkoG/kozmedia/raw/main/kozmedia.user.js
 // ==/UserScript==
 
 (function() {
