@@ -4,13 +4,15 @@
 // @version      2.0 alpha
 // @description  Modify the Hungarian National Television's live stream page to load only the video.
 // @author       simko.me
+// @updateURL    https://github.com/simkoG/kozmedia/raw/main/kozmedia.user.js
 // @match        https://*mediaklikk.hu/*elo*
 // @match        https://*mediaklikk.hu/*video*
 // @match        https://*m4sport.hu/*elo*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @icon         https://raw.githubusercontent.com/simkoG/kozmedia/main/icon.png
 // @resource     css-reset https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
+// @updateURL
 // ==/UserScript==
 
 (function() {
@@ -18,7 +20,7 @@
     console.clear();
 
     const name = 'simple-kozmedia';
-    const version = '2.0 alpha';
+    const version = '2.0';
 
     const html = document.querySelector( 'html' );
     const head = document.querySelector( 'head' );
@@ -46,9 +48,9 @@
     let init = () => {
         console.group( 'simpe-kozmedia, v' );
         console.log( 'version: ' + version );
-        console.log( 'more info: ' +  );
+        console.log( 'more info: https://github.com/simkoG/kozmedia' );
         console.groupEnd();
-        
+
         resetPage();
         body.appendChild( getVideoIframe() );
         resizeIframe();
