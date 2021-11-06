@@ -15,7 +15,7 @@ A közmédia élő oldalain kiszed minden felesleges dolgot az oldalról, meghag
     * [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta)
     * [Safari](https://apps.apple.com/us/app/tampermonkey/id1482490089)
 2. Telepísd a bővítményt [ide kattintva](https://github.com/simkoG/kozmedia/raw/main/kozmedia.user.js). 
-3. A megjelenő oldalon kattints a *Confirm installation* gombra. 
+3. A megjelenő oldalon kattints a **Confirm installation** gombra. 
 4. Frissísd az oldalt. 
 	
 ## Licensz
