@@ -1,7 +1,6 @@
 Simple Közmédia
 ===============
 
-## Leírás
 A közmédia élő oldalain kiszed minden felesleges dolgot az oldalról, meghagyva csak a videót az oldalon.
 
 ## Legfrissebb verzió
