@@ -36,7 +36,6 @@
     // resize the iframe when the browser size changes
     window.onresize = () => {
         resizeIframe();
-        console.log( 'resize' );
     }
 
 
