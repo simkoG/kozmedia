@@ -4,7 +4,6 @@
 // @version      2.0
 // @description  Modify the Hungarian National Television's live stream page to load only the video.
 // @author       simko.me
-// @updateURL    https://github.com/simkoG/kozmedia/raw/main/kozmedia.user.js
 // @match        https://*mediaklikk.hu/*elo*
 // @match        https://*mediaklikk.hu/*video*
 // @match        https://*m4sport.hu/*elo*
