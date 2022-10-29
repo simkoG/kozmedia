@@ -4,8 +4,8 @@ Simple Közmédia
 A közmédia élő oldalain kiszed minden felesleges dolgot az oldalról, meghagyva csak a videót az oldalon.
 
 ## Legfrissebb verzió
-* 2.0
-* kiadás: 2021. november 6.
+* 2.0.2
+* kiadás: 2022. október 29.
 
 ## Telepítés
 1. Telepísd a TamperMonkey kiegészítőt a böngésződhöz
