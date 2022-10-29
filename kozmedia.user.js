@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         simple-kozmedia
 // @namespace    http://tampermonkey.net/
-// @version      2.0.1
+// @version      2.0.2
 // @description  Modify the Hungarian National Television's live stream page to load only the video.
 // @author       simko.me
 // @match        https://*mediaklikk.hu/*elo*
@@ -20,7 +20,7 @@
     console.clear();
 
     const name = 'simple-kozmedia';
-    const version = '2.0';
+    const version = '2.0.2';
 
     const html = document.querySelector( 'html' );
     const head = document.querySelector( 'head' );
@@ -79,6 +79,8 @@
             align-items: center;
             justify-content: center;
         `;
+
+        document.title = "Közmédia ÉLŐ";
     }
 
 
