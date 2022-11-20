@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         simple-kozmedia
 // @namespace    http://tampermonkey.net/
-// @version      2.0.2
+// @version      2.1.0
 // @description  Modify the Hungarian National Television's live stream page to load only the video.
 // @author       simko.me
 // @match        https://*mediaklikk.hu/*elo*
@@ -20,23 +20,30 @@
     console.clear();
 
     const name = 'simple-kozmedia';
-    const version = '2.0.2';
+    const version = '2.1.0';
 
     const html = document.querySelector( 'html' );
     const head = document.querySelector( 'head' );
     const body = document.body;
 
-    const originalIframeSrc = document.querySelector( '.mtva-player-video-iframe' ).getAttribute( 'src' );
+
+    // Hide all elements before loading the new player.
+    (() => {
+        html.style.background = "black";
+        body.style.display = "none";
+    })();
+
 
     // run app after pageload
-    body.onload = () => {
+    window.addEventListener( 'load', () => {
         init();
-    };
+    }, false );
+
 
     // resize the iframe when the browser size changes
-    window.onresize = () => {
+    window.addEventListener( 'resize', () => {
         resizeIframe();
-    }
+    });
 
 
     /**
@@ -45,13 +52,16 @@
      * @return void
      */
     let init = () => {
+        console.clear();
         console.group( 'simpe-kozmedia, v' );
         console.log( 'version: ' + version );
         console.log( 'more info: https://github.com/simkoG/kozmedia' );
         console.groupEnd();
 
+        let originalSrc = document.querySelector( '.mtva-player-video-iframe' ).getAttribute( 'src' );
+
         resetPage();
-        body.appendChild( getVideoIframe() );
+        body.appendChild( getVideoIframe( originalSrc ) );
         resizeIframe();
     }
 
@@ -102,10 +112,10 @@
      *
      * @return DOM object
      */
-    let getVideoIframe = () => {
+    let getVideoIframe = ( src ) => {
         let iframe = document.createElement( 'iframe' );
         iframe.classList.add( 'mtva-player-video-iframe' );
-        iframe.setAttribute( 'src', originalIframeSrc );
+        iframe.setAttribute( 'src', src );
         iframe.setAttribute( 'allowFullScreen', '' );
         iframe.setAttribute( 'scrolling', 'no' );
         iframe.setAttribute( 'frameborder', '0' );
