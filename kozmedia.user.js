@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         simple-kozmedia
 // @namespace    http://tampermonkey.net/
-// @version      2.1.0
+// @version      2.1.1
 // @description  Modify the Hungarian National Television's live stream page to load only the video.
 // @author       simko.me
+// @match        https://*hirado.hu/*elo*
 // @match        https://*mediaklikk.hu/*elo*
 // @match        https://*mediaklikk.hu/*video*
 // @match        https://*m4sport.hu/*elo*
@@ -20,7 +21,7 @@
     console.clear();
 
     const name = 'simple-kozmedia';
-    const version = '2.1.0';
+    const version = '2.1.1';
 
     const html = document.querySelector( 'html' );
     const head = document.querySelector( 'head' );
