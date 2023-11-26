@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         simple-kozmedia
 // @namespace    http://tampermonkey.net/
-// @version      2.1.1
+// @version      2.2
 // @description  Modify the Hungarian National Television's live stream page to load only the video.
 // @author       simko.me
 // @match        https://*hirado.hu/*elo*
@@ -21,7 +21,7 @@
     console.clear();
 
     const name = 'simple-kozmedia';
-    const version = '2.1.1';
+    const version = '2.2';
 
     const html = document.querySelector( 'html' );
     const head = document.querySelector( 'head' );
@@ -63,7 +63,6 @@
 
         resetPage();
         body.appendChild( getVideoIframe( originalSrc ) );
-        resizeIframe();
     }
 
 
@@ -123,27 +122,12 @@
         iframe.setAttribute( 'marginwidth', '0' );
         iframe.setAttribute( 'marginheight', '0' );
         iframe.setAttribute( 'allow', 'encrypted-media' );
-        iframe.style.display = 'block';
+        iframe.style.cssText = `
+          display: block;
+          aspect-ratio: 16/9;
+          width: 100%;
+          height: auto;
+        `;
         return iframe;
-    }
-
-
-    /**
-     * Resize iframe to 16:9 ratio
-     *
-     * @return void
-     */
-    let resizeIframe = () => {
-        let iframe = document.querySelector( '.mtva-player-video-iframe' );
-        let w = window.innerWidth;
-        let h = window.innerHeight;
-
-        if( w >= h * ( 16 / 9 ) ) {
-            iframe.style.width = Math.round( ( h / 9 ) * 16 ) + "px";
-            iframe.style.height = h + "px";
-        } else {
-            iframe.style.width = w + "px";
-            iframe.style.height = Math.round( ( w / 16 ) * 9 ) + "px";
-        }
     }
 })();
